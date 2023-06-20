@@ -1,0 +1,16 @@
+#------   this script should be stored in /etc/logrotate.d/<file_name.conf>
+
+[Path of the log file]
+{
+	rotate 365 #---- keeps the log for 365 days
+	daily      #---- daily it will rotate the logs
+	size=10M   #---- sets the minimum size for the rotation to take place to 10M. 
+		         In other words, each log will not be rotated until it reaches 10MB.
+	compress   #---- compress the logs with .gz ext
+	dateext    #---- To save the compressed file with name as date
+	dateformat -%d-%m-%Y -----# file name will be stored name with this format
+	missingok  #----- if the application no more exists then still we wont get any error
+	notifempty #----- if log file is empty then it will not rotate
+}
+
+# logrotate -d /etc/logrotate.d/<file_name.conf>	
