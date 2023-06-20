@@ -19,7 +19,7 @@ ps -ef | grep "amazon" | awk -F" " '{print $2}'  # -ef display the process in fu
 # Ans: Today is   
 # Why? because date cmd sends the output to "stdin"  [we have stdin, stdout, stderr]
 
-curl www.google.com | grep error
+curl www.google.com/log | grep error
 
 sudo find / -name <file_name>
 
